@@ -26,7 +26,7 @@ SECRET_KEY = 'cofatjc=*e6=bg&2boyecis_v(c+4!frkdqz7^e(o(fn86lhq-'
 DEBUG = True
 
 #ESTO SE MODIFICÓ. SE DEBE PONER EL DOMINIO ESPECÍFICO
-ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1','mlprojectweb.uc.r.appspot.com','mlprojectweb.appspot.com']
+ALLOWED_HOSTS = ['0.0.0.0','127.0.0.1', '35.232.242.118', 'scene.nuvarmi.club', 'mlprojectweb.uc.r.appspot.com','mlprojectweb.appspot.com']
 
 # Application definition
 
