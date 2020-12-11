@@ -1,0 +1,6 @@
+conda update pip
+pip uninstall numpy
+pip install numpy==1.19.2
+conda install -c anaconda pycryptodome
+pip install -r requirements.txt
+conda install ruamel.yaml

@@ -1,0 +1,14 @@
+tensorflow
+keras
+django
+djangorestframework
+drf-yasg
+numpy
+pandas
+sklearn
+gunicorn
+pillow
+polls
+markdown
+django-filter
+pyrebase4

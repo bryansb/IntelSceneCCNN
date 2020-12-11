@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escena</title>
+</head>
+<body>
+    <a href="/apiSNN/scene_predict?path=default"> Predecir Default</a>
+
+    <br/>
+    <br/>
+    <h3>Imagen para test</h3>
+    <br/>
+    <img src="D:/documents/u/ciclo_7/aprendizaje_maquina/practicas/5.ActividadRecursosRedesNeuronalesAvanzadasImagenes/ProyectoMLbase/1.ProyectoMLbase/apiSNN/templates/img/5.jpg" alt="Test image"/> 
+
+    <form method = "post" enctype="multipart/form-data"> 
+        {% csrf_token %} 
+        {{ form.as_p }} 
+        <button type="submit">Upload</button> 
+    </form> 
+</body>
+</html>
