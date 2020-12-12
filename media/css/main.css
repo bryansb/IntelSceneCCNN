@@ -206,3 +206,7 @@ table td, table th{
 hr{
     background-color: #878787
 }
+
+ul li{
+  list-style: none;
+}

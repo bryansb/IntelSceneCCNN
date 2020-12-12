@@ -68,3 +68,7 @@ function upload(event) {
         document.getElementById("table").innerHTML = html;
         document.getElementById("loading").classList.add("e-hidden");
     }
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
