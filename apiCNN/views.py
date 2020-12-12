@@ -9,6 +9,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse 
 import pyrebase
 from apiCNN.Logic import modelCNN
+from django.http.response import JsonResponse
 # Create your views here.
 config = {
 
@@ -47,15 +48,15 @@ class UploadImage():
         if request.method == 'POST': 
             form = forms.ImageForm(request.POST, request.FILES)
             if form.is_valid():
-                
+                print('\n\nPOST LLEGA\n\n')
                 img = form.save(commit=False)
                 img.save()
                 path = img.image.url
                 certainty, prediction_result = modelCNN.modelCNN.predictScene(modelCNN.modelCNN, path)
-                return render(request, "results.html", {"result": prediction_result,  "certainty": certainty, "path": img.image.url[1:]})
-        else: 
-            form = models.UploadImage()
-        return render(request, 'scene.html', {'form' : form}) 
+                return JsonResponse({"result": prediction_result,  "certainty": certainty})
+        # else: 
+        #     form = models.UploadImage()
+        return render(request, 'scene.html') 
   
   
     def success(request):
@@ -81,4 +82,6 @@ class Classification():
         result = modeloSNN.modeloSNN.predictScene(modeloSNN.modeloSNN, path)
         return render(request, "welcome.html", {"result": result, "path": path})
 
-# https://www.geeksforgeeks.org/python-uploading-images-in-django/
+class Info():
+    def about_us(request):
+        return render(request, "aboutus.html")

@@ -38,6 +38,9 @@ class modelCNN():
         print(self.Selectedmodel.summary())
 
         img = Image.open(settings.BASE_DIR + path).convert('RGB')
+        img = img.resize(self.IMAGE_SIZE)
+        img.save(settings.BASE_DIR + path, "JPEG", optimize=True)
+
 
         img = self.preprocesamiento(self, img=img)
         predic_index, maxElement, certainty, prediction_result = self.predict(self, img)

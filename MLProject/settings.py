@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apiCNN.apps.ApicnnConfig',#ESTO SE AÑADIÓ
-    #'apiSNN.apps.ApiSNNConfig',#ESTO SE AÑADIÓ
     'rest_framework',#ESTO SE AÑADIÓ
     'drf_yasg',#ESTO SE AÑADIÓ
     'polls',#ESTO SE AÑADIÓ

@@ -1,0 +1,208 @@
+.navbar {
+    transition: all 0.4s;
+    background-color: #212121;
+}
+
+.navbar .nav-link {
+    color: #fff;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on scroll */
+.navbar.active {
+    background: #212121;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.active .nav-link {
+    color: #fff;
+}
+
+.navbar.active .nav-link:hover,
+.navbar.active .nav-link:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navbar.active .navbar-brand {
+    color: #fff;
+}
+
+
+/* Change navbar styling on small viewports */
+@media (max-width: 991.98px) {
+    .navbar {
+        background: #212121;
+    }
+
+    .navbar .navbar-brand, .navbar .nav-link {
+        color: #fff;
+    }
+}
+
+
+
+/*
+*
+* ==========================================
+* FOR DEMO PURPOSES
+* ==========================================
+*
+*/
+.text-small {
+    font-size: 0.9rem !important;
+}
+
+
+body {
+    /* min-height: 110vh; */
+    /* background-color: #4ca1af;
+    background-image: linear-gradient(135deg, #4ca1af 0%, #c4e0e5 100%); */
+    /* background-color: #BB8FCE;
+    background-image: linear-gradient(135deg, #2E4053 0%, #5D6D7E 100%); */
+    background-color: #BB8FCE;
+    background-image: linear-gradient(135deg, #121212 0%, #121212 100%);
+}
+
+.form-results{
+    background-color: #242424;
+    padding: 5px;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 3px #888888; */
+}
+
+.input-dark{
+    background-color: #525252;
+    color: #fff;
+}
+
+.input-dark:hover{
+    background-color: #676767;
+    color: #fff;
+}
+
+table {
+    /* border:1px solid #373737; */
+    margin-top:20px;
+}
+
+table thead th{
+    border:1px solid transparent !important;
+    background-color: #2C2C2C;
+}
+
+table td, table th{
+    border-bottom:1px solid #373737;
+}
+
+.label-input-file {
+    cursor: pointer;
+    background-color: #985EFF;
+    color: #000;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    font: inherit;
+    font-size: 1.25rem;
+    /* Style as you please, it will become the visible UI component. */
+ }
+ 
+.label-input-file:hover{
+    opacity: 0.85;
+}
+
+.input-file {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+ }
+
+
+
+ .lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 33px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: #fff;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(24px, 0);
+    }
+  }
+
+  #loading{
+      text-align: center;
+  }
+
+  .e-hidden{
+      display: none !important;
+  }
+  p a{
+      text-decoration: none;
+      color: #BB86FC;;
+  }
+
+  p a:hover{
+    text-decoration: none;
+    color: #985EFF;;
+  }
+
+hr{
+    background-color: #878787
+}

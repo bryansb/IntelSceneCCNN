@@ -6,12 +6,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('image_upload', views.UploadImage.image_view, name = 'image_upload'), 
+    #path('image_upload', views.UploadImage.image_view, name = 'image_upload'), 
     path('scene_predict', views.Classification.predictScene, name = 'scene_predict'),
     url(r'^$', views.Autenticacion.singIn),
     url(r'^postsign/', views.Autenticacion.postsign),
     url(r'^scene/$', views.Classification.determineScene),
-    url(r'^scene_predict/$', views.Classification.predictScene),
+    url(r'^image_upload/$', views.UploadImage.image_view),
+    url(r'^about-us/$', views.Info.about_us),
 ]
 
 if settings.DEBUG: 

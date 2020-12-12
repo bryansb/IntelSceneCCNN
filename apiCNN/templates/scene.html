@@ -3,21 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../media/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../media/css/fontawesome/all.min.css">
+
+    <link rel="stylesheet" href="../media/css/main.css">
+    
+    <script src="../media/js/bootstrap/jquery-3.5.1.min.js"></script>
+    <script src="../media/js/bootstrap/popper.min.js"></script>
+    <script src="../media/js/bootstrap/bootstrap.min.js"></script>
+    <script src="../media/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../media/js/bootstrap/all.min.js"></script>
+
+    <script src="../media/js/main.js"></script>
+
     <title>Escena</title>
 </head>
 <body>
-    <a href="/apiSNN/scene_predict?path=default"> Predecir Default</a>
-
-    <br/>
-    <br/>
-    <h3>Imagen para test</h3>
-    <br/>
-    <img src="D:/documents/u/ciclo_7/aprendizaje_maquina/practicas/5.ActividadRecursosRedesNeuronalesAvanzadasImagenes/ProyectoMLbase/1.ProyectoMLbase/apiSNN/templates/img/5.jpg" alt="Test image"/> 
-
-    <form method = "post" enctype="multipart/form-data"> 
-        {% csrf_token %} 
-        {{ form.as_p }} 
-        <button type="submit">Upload</button> 
-    </form> 
+    <!-- Navbar-->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top py-3">
+            <div class="container"><a href="/apiCNN/scene/" class="navbar-brand text-uppercase font-weight-bold">Clasificador de escenas</a>
+                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav">
+                        <li class="nav-item "><a href="#" class="nav-link disabled">CNN</a></li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a href="/apiCNN/scene/" class="nav-link text-uppercase font-weight-bold">Inicio <span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item"><a href="/apiCNN/about-us/" class="nav-link text-uppercase font-weight-bold">Sobre Nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section class="container text-light" style="margin-top: 150px;">
+        <div class="row">
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-6">
+                <div class="row form-results">
+                    <form method = "post" action="/apiCNN/image_upload/" enctype="multipart/form-data" onsubmit="return false;" id="myImage" class="col-12">
+                        {% csrf_token %}
+                        <div class="form-group row justify-content-center">
+                            <label for="image" class="btn label-input-file "><i class="fas fa-upload"></i>&nbsp; <strong> Subir una imagen</strong></label>
+                            <input type="file" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" class="form-control-file input-file" 
+                                onchange="readURL(this);">
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn input-dark btn-lg btn-block"> <i class="fas fa-brain"></i> &nbsp;Clasificar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="row form-results" style="margin-top: 50px;">
+                    <div class="col-12">
+                        <div class="row justify-content-center e-hidden" id="loading">
+                            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                        </div>
+                        <div class="table-responsive">
+                            
+                            <table class="table  text-light" id="table">
+                             
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <img src="" id="tmpimg" class="w-100 rounded">
+            </div>
+     </div>
+    </section>
 </body>
 </html>
