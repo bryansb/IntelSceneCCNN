@@ -32,7 +32,7 @@ function upload(event) {
         document.getElementById("table").innerHTML = "<p class='text-center'> Seleccione una imagen </p>";
         return false;
     }
-    
+    document.getElementById('class-btn').disabled = true;
     document.getElementById("loading").classList.remove("e-hidden");
     var data = new FormData($('#myImage').get(0));
     console.log($('#myImage').get(0))
@@ -43,8 +43,14 @@ function upload(event) {
         cache: false,
         processData: false,
         contentType: false,
+        error: function(){
+            document.getElementById("table").innerHTML = "<p class='text-center'> La imagen no pudo ser clasificada </p>";
+            document.getElementById('class-btn').disabled = false;
+            document.getElementById("loading").classList.add("e-hidden");
+        },
         success: function(data) {
-            print(data)
+            print(data);
+            document.getElementById('class-btn').disabled = false;
         }
     });
     return false;

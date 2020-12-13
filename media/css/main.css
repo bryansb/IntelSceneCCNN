@@ -101,6 +101,10 @@ body {
   box-shadow: none;
 }
 
+.input-dark:disabled:hover{
+  background-color: #525252;
+}
+
 table {
     /* border:1px solid #373737; */
     margin-top:20px;
