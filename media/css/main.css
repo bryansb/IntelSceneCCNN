@@ -91,6 +91,16 @@ body {
     color: #fff;
 }
 
+.input-dark:active{
+  border: 1px solid #995eff79;
+  transition: none;
+}
+
+.input-dark:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 table {
     /* border:1px solid #373737; */
     margin-top:20px;
@@ -119,7 +129,7 @@ table td, table th{
  }
  
 .label-input-file:hover{
-    opacity: 0.85;
+  background-color: #a26dff;
 }
 
 .input-file {
@@ -127,8 +137,6 @@ table td, table th{
     position: absolute;
     z-index: -1;
  }
-
-
 
  .lds-ellipsis {
     display: inline-block;

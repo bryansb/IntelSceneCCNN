@@ -24,7 +24,7 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg fixed-top py-3">
             <div class="container"><a href="/apiCNN/scene/" class="navbar-brand text-uppercase font-weight-bold">Clasificador de escenas</a>
-                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right text-light"><i class="fa fa-bars"></i></button>
                 <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav">
                         <li class="nav-item "><a href="#" class="nav-link disabled">CNN</a></li>
@@ -41,12 +41,13 @@
         <div class="row">
         </div>
         <div class="row justify-content-center">
-            <div class="col-6">
-                <div class="row form-results">
+            <div class="col-md-5 col-11 m-1">
+                <div class="row form-results text-center justify-content-center">
+                    <h5 class="mt-4 ml-4 mr-4 mb-5">Suba una imagen para clasificarla</h5>
                     <form method = "post" action="/apiCNN/image_upload/" enctype="multipart/form-data" onsubmit="return false;" id="myImage" class="col-12">
                         {% csrf_token %}
                         <div class="form-group row justify-content-center">
-                            <label for="image" class="btn label-input-file "><i class="fas fa-upload"></i>&nbsp; <strong> Subir una imagen</strong></label>
+                            <label for="image" class="btn label-input-file "><i class="fas fa-upload"></i>&nbsp; <strong> Subir imagen</strong></label>
                             <input type="file" name="image" id="image" accept="image/x-png,image/gif,image/jpeg" class="form-control-file input-file" 
                                 onchange="readURL(this);">
                         </div>
@@ -55,23 +56,25 @@
                         </div>
                     </form>
                 </div>
-                <div class="row form-results" style="margin-top: 50px;">
+                <div class="row form-results e-hidden" style="margin-top: 50px;" id="results-table">
                     <div class="col-12">
                         <div class="row justify-content-center e-hidden" id="loading">
                             <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
                         </div>
                         <div class="table-responsive">
-                            
                             <table class="table  text-light" id="table">
-                             
                             </table>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-md-6 col-11 form-results m-1">
+                <div class="small m-2 text-white-50 text-center" id="imgTemp">
+                    Seleccione una imagen
+                </div>
                 <img src="" id="tmpimg" class="w-100 rounded">
             </div>
+        </div>
      </div>
     </section>
     <footer class="page-footer text-light container mt-auto">

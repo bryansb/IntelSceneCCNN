@@ -52,7 +52,7 @@ class modelCNN():
         predic_index = self.Selectedmodel.predict(imgTrans)[0]
         print('Predictions: ', predic_index)
         maxElement = np.amax(predic_index)
-        certainty = str(round(maxElement*100, 4))
+        certainty = str(round(maxElement*100, 2))
         print('Certainty: ', certainty+'%')
         result = np.where(predic_index == np.amax(predic_index))
         print('Max: ', maxElement)

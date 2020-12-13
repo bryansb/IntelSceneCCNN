@@ -20,13 +20,20 @@ function readURL(input) {
         };
 
         reader.readAsDataURL(input.files[0]);
+        document.getElementById("imgTemp").classList.add("e-hidden");
     }
 }
 
 function upload(event) {
-    document.getElementById("loading").classList.remove("e-hidden");
-    document.getElementById("table").innerHTML = "";
     event.preventDefault();
+    document.getElementById("results-table").classList.remove("e-hidden");
+    document.getElementById("table").innerHTML = "";
+    if(document.getElementById("image").files.length == 0){
+        document.getElementById("table").innerHTML = "<p class='text-center'> Seleccione una imagen </p>";
+        return false;
+    }
+    
+    document.getElementById("loading").classList.remove("e-hidden");
     var data = new FormData($('#myImage').get(0));
     console.log($('#myImage').get(0))
     $.ajax({
@@ -61,7 +68,7 @@ function upload(event) {
             </tr>
             <tr>
                 <th scope="row" class="text-right">Certeza</th>
-                <td>${data['certainty']}</td>
+                <td>${data['certainty']} %</td>
             </tr>
         </tbody>
         `;
