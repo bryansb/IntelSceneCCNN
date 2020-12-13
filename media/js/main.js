@@ -79,3 +79,10 @@ function upload(event) {
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
       })
+
+function p(){
+    document.getElementById('no').classList.remove('e-hidden');
+    setTimeout(function() {
+        document.getElementById('no').classList.add('e-hidden');
+     }, 1000);
+}
